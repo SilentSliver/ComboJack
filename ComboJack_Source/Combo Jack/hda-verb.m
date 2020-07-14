@@ -896,21 +896,21 @@ int main()
     }
     
     //load ui resources
-    iconUrl = CFURLCreateWithString(NULL, CFSTR("file:///usr/local/share/ComboJack/Headphone.icns"), NULL);
+    iconUrl = CFURLCreateWithString(NULL, CFSTR("file:///Library/Apple/usr/share/ComboJack/Headphone.icns"), NULL);
     if (!CFURLResourceIsReachable(iconUrl, NULL))
         iconUrl = NULL;
     //NSData *l10nData = [NSData dataWithContentsOfFile:@"/usr/local/share/ComboJack/l10n.json"];
-    /*
+    
     if(NSClassFromString(@"NSJSONSerialization"))
     {
         NSError *error = nil;
         id l10nObj = [NSJSONSerialization 
-            JSONObjectWithData:[NSData dataWithContentsOfFile:@"/usr/local/share/ComboJack/l10n.json"]
+            JSONObjectWithData:[NSData dataWithContentsOfFile:@"/Library/Apple/usr/share/ComboJack/l10n.json"]
             options:0 error:&error];
         if(!error && [l10nObj isKindOfClass:[NSDictionary class]])
             l10nDict = l10nObj;
     }
-     */
+    
     dlgText = [[NSDictionary alloc] initWithObjectsAndKeys:
         @"Combo Jack Notification", @"dialogTitle",
         @"What did you just plug in? (Press ESC to cancel)", @"dialogMsg",
