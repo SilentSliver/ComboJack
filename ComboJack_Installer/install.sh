@@ -11,27 +11,27 @@ cd "$( dirname "${BASH_SOURCE[0]}" )"
 #
 sudo launchctl unload /Library/LaunchDaemons/com.XPS.ComboJack.plist 2>/dev/null
 sudo rm -rf /Library/Extensions/CodecCommander.kext
-sudo rm -f /usr/local/bin/ALCPlugFix
+sudo rm -f /Library/Apple/usr/bin/ALCPlugFix
 sudo rm -f /Library/LaunchAgents/good.win.ALCPlugFix
 sudo rm -f /Library/LaunchDaemons/good.win.ALCPlugFix
 sudo rm -f /usr/local/sbin/hda-verb
+sudo rm -f /Library/Apple/usr/bin/hda-verb
 sudo rm -f /usr/local/share/ComboJack/Headphone.icns
 sudo rm -f /usr/local/share/ComboJack/l10n.json
 
-# install 
-mkdir -p /usr/local/sbin
-sudo cp ComboJack /usr/local/sbin
-sudo chmod 755 /usr/local/sbin/ComboJack
-sudo chown root:wheel /usr/local/sbin/ComboJack
-sudo spctl --add /usr/local/sbin/ComboJack
-sudo cp hda-verb /usr/local/sbin
-#sudo chmod 755 /usr/local/sbin/hda-verb
-#sudo chown root:wheel /usr/local/sbin/hda-verb
-sudo mkdir -p /usr/local/share/ComboJack/
-sudo cp Headphone.icns /usr/local/share/ComboJack/
-sudo chmod 644 /usr/local/share/ComboJack/Headphone.icns
-sudo cp l10n.json /usr/local/share/ComboJack/
-sudo chmod 644 /usr/local/share/ComboJack/l10n.json
+# install
+sudo cp ComboJack /Library/Apple/usr/bin
+sudo chmod 755 /Library/Apple/usr/bin/ComboJack
+sudo chown root:wheel /Library/Apple/usr/bin/ComboJack
+sudo spctl --add /Library/Apple/usr/bin/ComboJack
+sudo cp hda-verb /Library/Apple/usr/bin
+#sudo chmod 755 /Library/Apple/usr/bin/hda-verb
+#sudo chown root:wheel /Library/Apple/usr/bin/hda-verb
+sudo mkdir -p /Library/Apple/usr/share/ComboJack/
+sudo cp Headphone.icns /Library/Apple/usr/share/ComboJack/
+sudo chmod 644 /Library/Apple/usr/share/ComboJack/Headphone.icns
+sudo cp l10n.json /Library/Apple/usr/share/ComboJack/
+sudo chmod 644 /Library/Apple/usr/share/ComboJack/l10n.json
 sudo cp com.XPS.ComboJack.plist /Library/LaunchDaemons/
 sudo chmod 644 /Library/LaunchDaemons/com.XPS.ComboJack.plist
 sudo chown root:wheel /Library/LaunchDaemons/com.XPS.ComboJack.plist
